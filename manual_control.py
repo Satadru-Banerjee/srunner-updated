@@ -900,11 +900,11 @@ def game_loop(args):
         client.set_timeout(20.0)
         sim_world = client.get_world()
         os.environ["SDL_VIDEODRIVER"] = "dummy"
-        # display = pygame.display.set_mode(
-        #     (args.width, args.height),
-        #     pygame.HWSURFACE | pygame.DOUBLEBUF)
-        # display.fill((0,0,0))
-        # pygame.display.flip()
+        display = pygame.display.set_mode(
+            (args.width, args.height),
+            pygame.HWSURFACE | pygame.DOUBLEBUF)
+        display.fill((0,0,0))
+        pygame.display.flip()
 
         hud = HUD(args.width, args.height)
         world = World(sim_world, hud, args)
